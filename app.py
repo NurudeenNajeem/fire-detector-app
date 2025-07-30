@@ -5,8 +5,8 @@ import math
 from ultralytics import YOLO
 import cvzone
 import tempfile
-import torch
-
+from PIL import Image
+import io
 import numpy as np
 from streamlit_webrtc import webrtc_streamer, VideoTransformerBase, WebRtcMode
 import av
