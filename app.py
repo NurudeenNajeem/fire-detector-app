@@ -1,10 +1,12 @@
 import streamlit as st # This is fine, just imports the library
 import cv2
-import math
 import torch
+import math
 from ultralytics import YOLO
 import cvzone
 import tempfile
+import torch
+
 import numpy as np
 from streamlit_webrtc import webrtc_streamer, VideoTransformerBase, WebRtcMode
 import av
@@ -16,7 +18,6 @@ CLASS_NAMES = ['fire']
 DEFAULT_CONFIDENCE_THRESHOLD = 0.3 # Reduced for better initial visibility
 RESIZE_WIDTH = 640
 RESIZE_HEIGHT = 480
-
 # --- Load YOLO Model (cached for efficiency) ---
 @st.cache_resource # <--- THIS IS THE CULPRIT!
 def load_yolo_model(model_path):
@@ -134,3 +135,4 @@ elif source_option == "Webcam":
     )
     st.write("Click 'START' to begin webcam processing.")
     #streamlit run app.py
+    
