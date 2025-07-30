@@ -1,12 +1,14 @@
 import streamlit as st # This is fine, just imports the library
 import cv2
 import math
+import torch
 from ultralytics import YOLO
 import cvzone
 import tempfile
 import numpy as np
 from streamlit_webrtc import webrtc_streamer, VideoTransformerBase, WebRtcMode
 import av
+torch.classes.__path__ = []
 
 # --- Configuration ---
 MODEL_PATH = 'fire.pt'  # Make sure this file is in the same directory as app.py
